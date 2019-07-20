@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Button Triggered Giphy</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // This is our API key. Add your own API key between the ""
+    var APIKey = "78ACVi6O3S1jAiKuMFVoeZcAAFFlk1HP";
+    
+    // Here we are building the URL we need to query the database
+    var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=" + APIKey
+    +'&q='
+    
+    //created a button for the calls
+    </script>
+    <button data-search ="Richard Pryor"> RICHARD</button>
+    <button data-serach ="Gene Wilder">GENE</button>
+    <script >
+        $('button').on('click',function(){
+            var x = $(this).data("search");
+            console.log("BUTTON CLICKED")
+        });
+    
+        // We then created an AJAX call
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function(response) {
+    
+         
+          
+         console.log (response);
+        });
+  </script>
+</body>
+</html>
